@@ -3,14 +3,14 @@ import subprocess
 import json
 import time
 
-# Конфиг Xray
+# Конфиг Xray — слушает на порту 5000
 CONFIG = {
     "log": {
         "loglevel": "warning"
     },
     "inbounds": [
         {
-            "port": 8080,
+            "port": 5000,
             "protocol": "vless",
             "settings": {
                 "clients": [
@@ -54,7 +54,7 @@ print("""
 ║         СЕРВЕР РАБОТАЕТ             ║
 ╠══════════════════════════════════════╣
 ║ Протокол: VLESS
-║ Порт: 8080
+║ Порт: 5000
 ║ UUID: aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
 ║ Flow: xtls-rprx-vision
 ║ Path: /freebird
@@ -65,6 +65,5 @@ print("""
 """)
 
 # Держим процесс живым
-import time
 while True:
     time.sleep(60)
